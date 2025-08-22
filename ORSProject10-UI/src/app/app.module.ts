@@ -1,12 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-
 
 import { AppComponent } from './app.component';
 import { MarksheetComponent } from './marksheet/marksheet.component';
@@ -27,9 +25,7 @@ import { MarksheetListComponent } from './marksheet/marksheet-list.component';
 import { CollegeListComponent } from './college/college-list.component';
 import { StudentListComponent } from './student/student-list.component';
 import { UserComponent } from './user/user.component';
-
 import { UserListComponent } from './user/user-list.component';
-
 import { RoleComponent } from './role/role.component';
 import { CourseComponent } from './course/course.component';
 import { SubjectComponent } from './subject/subject.component';
@@ -46,7 +42,6 @@ import { GetmarksheetComponent } from "./marksheet/getmarksheet.component";
 import { ChangepasswordComponent } from "./user/changepassword.component";
 import { LoaderComponent } from "./loader/loader.component";
 import { NavbarComponent } from './navbar/navbar.component';
-
 import { SpinnerComponent } from './spinner/spinner.component';
 import { FooterComponent } from './footer/footer.component';
 import { AuthService } from './auth.service';
@@ -55,11 +50,13 @@ import { JasperReportComponent } from './jasper-report/jasper-report.component';
 import { StaffmemberComponent } from './staffmember/staffmember.component';
 import { StaffmemberlistComponent } from './staffmember/staffmemberlist.component';
 
+// ✅ Missing imports
+import { PageNotFoundComponent } from './page-not-found.component';
+import { ListComponent } from './navbar/list.component';
 
 export function myHttpLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
-
 
 @NgModule({
   declarations: [
@@ -98,11 +95,16 @@ export function myHttpLoader(http: HttpClient) {
     MyprofileComponent,
     JasperReportComponent,
     StaffmemberComponent,
-    StaffmemberlistComponent
+    StaffmemberlistComponent,
+    // ✅ Add these two
+    PageNotFoundComponent,
+    ListComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -125,8 +127,4 @@ export function myHttpLoader(http: HttpClient) {
   ],
   bootstrap: [AppComponent]
 })
-
-
-export class AppModule {
-
-}
+export class AppModule {}
