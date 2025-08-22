@@ -1,4 +1,3 @@
-
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -16,7 +15,7 @@ import { UserListComponent } from './user/user-list.component';
 import { UserComponent } from './user/user.component';
 import { RoleComponent } from './role/role.component';
 import { CourseComponent } from "./course/course.component";
-import { SubjectComponent } from "./subject/subject.component"
+import { SubjectComponent } from "./subject/subject.component";
 import { RoleListComponent } from './role/role-list.component';
 import { CourseListComponent } from "./course/course-list.component";
 import { FacultyComponent } from "./faculty/faculty.component";
@@ -34,233 +33,62 @@ import { MyprofileComponent } from './user/myprofile.component';
 import { JasperReportComponent } from './jasper-report/jasper-report.component';
 import { StaffmemberComponent } from './staffmember/staffmember.component';
 import { StaffmemberlistComponent } from './staffmember/staffmemberlist.component';
+
+// ✅ Import missing
+import { PageNotFoundComponent } from './page-not-found.component';
+
 const routes: Routes = [
-    {
-        path: '',
-        redirectTo: 'dashboard',
-        pathMatch: 'full'
-    },
-    {
-        path: 'dashboard',
-        component: DashboardComponent
-    },
-    {
-        path: 'loader',
-        component: LoaderComponent
+  { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+  { path: 'dashboard', component: DashboardComponent },
+  { path: 'loader', component: LoaderComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'login/:userparams', component: LoginComponent },
+  { path: 'spinner', component: SpinnerComponent },
+  { path: 'forgotpassword', component: ForgotPasswordComponent },
+  { path: 'signup', component: SignUpComponent },
+  { path: 'marksheet', component: MarksheetComponent },
+  { path: 'marksheet/:id', component: MarksheetComponent },
+  { path: 'marksheetlist', component: MarksheetListComponent },
+  { path: 'marksheetmeritlist', component: MarksheetmeritListComponent },
+  { path: 'getmarksheet', component: GetmarksheetComponent },
+  { path: 'college', component: CollegeComponent },
+  { path: 'college/:id', component: CollegeComponent },
+  { path: 'collegelist', component: CollegeListComponent },
+  { path: 'student', component: StudentComponent },
+  { path: 'student/:id', component: StudentComponent },
+  { path: 'studentlist', component: StudentListComponent },
+  { path: 'user', component: UserComponent },
+  { path: 'user/:id', component: UserComponent },
+  { path: 'userlist', component: UserListComponent },
+  { path: 'staffmember', component: StaffmemberComponent },
+  { path: 'staffmember/:id', component: StaffmemberComponent },
+  { path: 'staffmemberlist', component: StaffmemberlistComponent },
+  { path: 'role', component: RoleComponent },
+  { path: 'rolelist', component: RoleListComponent },
+  { path: 'role/:id', component: RoleComponent },
+  { path: 'course', component: CourseComponent },
+  { path: 'courselist', component: CourseListComponent },
+  { path: 'course/:id', component: CourseComponent },
+  { path: 'faculty', component: FacultyComponent },
+  { path: 'facultylist', component: FacultyListComponent },
+  { path: 'faculty/:id', component: FacultyComponent },
+  { path: 'timetable', component: TimetableComponent },
+  { path: 'timetablelist', component: TimetableListComponent },
+  { path: 'timetable/:id', component: TimetableComponent },
+  { path: 'subject', component: SubjectComponent },
+  { path: 'subjectlist', component: SubjectListComponent },
+  { path: 'subject/:id', component: SubjectComponent },
+  { path: 'myprofile', component: MyprofileComponent },
+  { path: 'file', component: FileComponent },
+  { path: 'changepassword', component: ChangepasswordComponent },
+  { path: 'jasperReport', component: JasperReportComponent },
 
-    },
-    {
-        path: 'login',
-        component: LoginComponent
-    }
-    ,
-    {
-        path: 'login/:userparams',
-        component: LoginComponent
-    },
-
-    {
-        path: 'spinner',
-        component: SpinnerComponent
-    },
-    {
-        path: 'forgotpassword',
-        component: ForgotPasswordComponent
-    },
-    {
-        path: 'signup',
-        component: SignUpComponent
-    },
-
-    {
-        path: 'marksheet',
-        component: MarksheetComponent
-
-    },
-    {
-        path: 'marksheet/:id',
-        component: MarksheetComponent
-
-    },
-    {
-        path: 'marksheetlist',
-        component: MarksheetListComponent
-
-    },
-    {
-        path: 'marksheetmeritlist',
-        component: MarksheetmeritListComponent
-
-    },
-    {
-        path: 'getmarksheet',
-        component: GetmarksheetComponent
-
-    },
-    {
-        path: 'college',
-        component: CollegeComponent
-
-    },
-    {
-        path: 'college/:id',
-        component: CollegeComponent
-
-    },
-    {
-        path: 'collegelist',
-        component: CollegeListComponent
-
-    },
-    {
-        path: 'student',
-        component: StudentComponent
-
-    },
-    {
-        path: 'student/:id',
-        component: StudentComponent
-
-    },
-    {
-        path: 'studentlist',
-        component: StudentListComponent
-
-    },
-    {
-        path: 'user',
-        component: UserComponent
-
-    },
-    {
-        path: 'user/:id',
-        component: UserComponent
-
-    },
-    {
-        path: 'userlist',
-        component: UserListComponent
-
-    },
-    {
-        path: 'staffmember',
-        component: StaffmemberComponent
-
-    },
-    {
-        path: 'staffmember/:id',
-        component: StaffmemberComponent
-
-    },
-    {
-        path: 'staffmemberlist',
-        component: StaffmemberlistComponent
-
-    },
-
-    {
-        path: 'role',
-        component: RoleComponent
-
-    },
-    {
-        path: 'rolelist',
-        component: RoleListComponent
-
-    },
-    {
-        path: 'role/:id',
-        component: RoleComponent
-
-    },
-    {
-        path: 'course',
-        component: CourseComponent
-
-    },
-    {
-        path: 'courselist',
-        component: CourseListComponent
-
-    },
-    {
-        path: 'course/:id',
-        component: CourseComponent
-
-    },
-    {
-
-        path: 'faculty',
-        component: FacultyComponent
-
-    },
-    {
-        path: 'facultylist',
-        component: FacultyListComponent
-
-    },
-    {
-        path: 'faculty/:id',
-        component: FacultyComponent
-
-    },
-    {
-        path: 'timetable',
-        component: TimetableComponent
-
-
-    },
-    {
-        path: 'timetablelist',
-        component: TimetableListComponent
-
-    },
-    {
-        path: 'timetable/:id',
-        component: TimetableComponent
-
-    },
-    {
-        path: 'subject',
-        component: SubjectComponent
-
-    },
-    {
-        path: 'subjectlist',
-        component: SubjectListComponent
-
-    },
-    {
-        path: 'subject/:id',
-        component: SubjectComponent
-
-    },
-    {
-        path: 'myprofile',
-        component: MyprofileComponent
-    },
-    {
-        path: 'file',
-        component: FileComponent
-    },
-    {
-        path: 'changepassword',
-        component: ChangepasswordComponent
-
-
-    },
-
-    {
-        path: 'jasperReport',
-        component: JasperReportComponent
-
-    }
+  // ✅ Add wildcard route at the end
+  { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({
-    imports: [RouterModule.forRoot(routes, { useHash: true })],
-    exports: [RouterModule]
+  imports: [RouterModule.forRoot(routes, { useHash: true })],
+  exports: [RouterModule]
 })
-
-
 export class AppRoutingModule { }
